@@ -30,7 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.gb1 = new System.Windows.Forms.GroupBox();
+            this.gbMain = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,28 +46,28 @@
             this.colAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAmountInWords = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtpFrom = new System.Windows.Forms.DateTimePicker();
-            this.gb1.SuspendLayout();
+            this.gbMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgView)).BeginInit();
             this.SuspendLayout();
             // 
-            // gb1
+            // gbMain
             // 
-            this.gb1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.gb1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.gb1.Controls.Add(this.label3);
-            this.gb1.Controls.Add(this.txtSearch);
-            this.gb1.Controls.Add(this.label2);
-            this.gb1.Controls.Add(this.label1);
-            this.gb1.Controls.Add(this.dtpTo);
-            this.gb1.Controls.Add(this.dtgView);
-            this.gb1.Controls.Add(this.dtpFrom);
-            this.gb1.Location = new System.Drawing.Point(11, 6);
-            this.gb1.Margin = new System.Windows.Forms.Padding(2);
-            this.gb1.Name = "gb1";
-            this.gb1.Padding = new System.Windows.Forms.Padding(2);
-            this.gb1.Size = new System.Drawing.Size(1073, 561);
-            this.gb1.TabIndex = 0;
-            this.gb1.TabStop = false;
+            this.gbMain.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gbMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.gbMain.Controls.Add(this.label3);
+            this.gbMain.Controls.Add(this.txtSearch);
+            this.gbMain.Controls.Add(this.label2);
+            this.gbMain.Controls.Add(this.label1);
+            this.gbMain.Controls.Add(this.dtpTo);
+            this.gbMain.Controls.Add(this.dtgView);
+            this.gbMain.Controls.Add(this.dtpFrom);
+            this.gbMain.Location = new System.Drawing.Point(11, 6);
+            this.gbMain.Margin = new System.Windows.Forms.Padding(2);
+            this.gbMain.Name = "gbMain";
+            this.gbMain.Padding = new System.Windows.Forms.Padding(2);
+            this.gbMain.Size = new System.Drawing.Size(1073, 561);
+            this.gbMain.TabIndex = 0;
+            this.gbMain.TabStop = false;
             // 
             // label3
             // 
@@ -235,7 +235,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.ClientSize = new System.Drawing.Size(1103, 586);
-            this.Controls.Add(this.gb1);
+            this.Controls.Add(this.gbMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -243,8 +243,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cheque Writer View";
             this.Load += new System.EventHandler(this.frmChequeAutomationView_Load);
-            this.gb1.ResumeLayout(false);
-            this.gb1.PerformLayout();
+            this.gbMain.ResumeLayout(false);
+            this.gbMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgView)).EndInit();
             this.ResumeLayout(false);
 
@@ -252,7 +252,7 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox gb1;
+        private System.Windows.Forms.GroupBox gbMain;
         private System.Windows.Forms.DateTimePicker dtpTo;
         private System.Windows.Forms.DataGridView dtgView;
         private System.Windows.Forms.DateTimePicker dtpFrom;

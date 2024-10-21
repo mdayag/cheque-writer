@@ -1,4 +1,7 @@
 ﻿using System;
+using common;
+using System.Collections.Generic;
+using System.Windows.Forms;
 using interfaces;
 using view.helpers;
 
@@ -17,7 +20,9 @@ namespace view.forms
         public frmChequeWriterView(IChequeLogs checkLogs)
         {
             InitializeComponent();
+
             _checkLogs = checkLogs;
+            gbMain.Visible = false;
         }
 
         #endregion Constructor
@@ -26,8 +31,23 @@ namespace view.forms
 
         private void frmChequeAutomationView_Load(object sender, EventArgs e)
         {
+            List<Action> _action = new List<Action>();
+            _action.Add(LoadForm);
+            ProcessMethod(new frmReportLoading(this), this, _action);
+        }
+
+        private void LoadForm()
+        {
             dtgView.DataSource = _checkLogs.GetChequeLogsByDateRange(string.Empty, Convert.ToDateTime(dtpFrom.Value.ToString()), Convert.ToDateTime(dtpTo.Value.ToString()));
+
+            gbMain.Visible = true;
             dtpFrom.Focus();
+        }
+
+        private void ProcessMethod(Form frmload, Form _current, List<Action> _action)
+        {
+            Threading t = new Threading(_current, _action, frmload);
+            t.ProcessNow();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)

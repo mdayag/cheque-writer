@@ -37,6 +37,7 @@ namespace view.forms
             _presenter = new ReportPresenter(this);
             _listParameterField = new List<ParameterField>();
 
+            gbMain.Visible = false;
             txtNumber.Text = "0.00";
             chkPrint.Checked = true;
         }
@@ -163,12 +164,21 @@ namespace view.forms
 
         private void frmChequeAutomationEntry_Load(object sender, EventArgs e)
         {
+            List<Action> _action = new List<Action>();
+            _action.Add(LoadForm);
+            _presenter.ProcessMethod(new frmReportLoading(this), this, _action);
+        }
+
+        private void LoadForm()
+        {
             var banks = from Bank en in Enum.GetValues(typeof(Bank))
                         select new { id = (int)en, name = en.ToString() };
 
             cboBank.DataSource = banks.ToList();
             cboBank.ValueMember = "id";
             cboBank.DisplayMember = "name";
+            
+            gbMain.Visible = true;
 
             cboBank.SelectedValue = 14;
             cboBank.Focus();
